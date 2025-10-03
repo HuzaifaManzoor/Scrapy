@@ -1,0 +1,36 @@
+
+
+for creating scrapy project we use command 
+--> scrapy startprojetc abc 
+
+fro creating spide commad 
+--> scrapy genspider name_of_spider website_url 
+
+for see commands of scrapy
+-->  scrapy shell 
+
+to fetch website use 
+--> fetch('url')
+
+then by default the fetching of all page is in response variable 
+we fetch data from css selector 
+
+response.css(tagname.class_name)  ####### it can get more attributes as well 
+
+store response in variable 
+
+books = response.css(tagname.class_name)
+len(books) ### all books of pages 
+
+book = books[0]  ## first book 
+
+get the text of first book 
+-->  book.css('h3 a::text').get()      # h3 is tage inside it we have a tage in a tag i want text 
+ 
+
+get price of book 
+ --> book.css('.product_price .price_color::text').get()   ## it use . before name of class 
+
+
+geting link 
+book.css('h3 a').attrib['href']
